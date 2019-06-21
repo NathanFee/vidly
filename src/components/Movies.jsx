@@ -25,7 +25,6 @@ class Movies extends Component {
   };
 
   handleLike = movie => {
-    console.log(movie);
     const movies = [...this.state.movies];
     const index = movies.indexOf(movie);
     movies[index] = { ...movies[index] };
@@ -54,7 +53,6 @@ class Movies extends Component {
       selectedGenre && selectedGenre._id
         ? allMovies.filter(m => m.genre._id === selectedGenre._id)
         : allMovies;
-    console.log("Filtered movies", filtered);
     const movies = paginate(filtered, currentPage, pageSize);
     return (
       <div className="row">
